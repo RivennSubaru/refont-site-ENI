@@ -1,0 +1,1560 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+/* html{
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: rgb(24, 24, 49);
+} */
+
+body{
+    font-family: sans-serif;
+}
+
+/* style globale */
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span{
+    font-size: .9rem;
+    color: #757373;
+}
+
+h6{
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+
+ /* NAVIGATION */
+
+a.redirection {
+    position: fixed;
+    right: 19px;
+    bottom: 39px;
+    background: rgb(21, 21, 100);
+    padding: 10px;
+}
+
+i#redirect-ico {
+    font-size: 25px;
+    color: white;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+
+#navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw;
+}
+
+ /* img container */
+#navigation p{
+    height: fit-content;
+    width: fit-content;
+}
+
+#navigation p img{
+    cursor: pointer;
+}
+
+/* aligner les liens de nav */
+#navigation nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Style des lignes de nav */
+header nav ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+/* Style des liens de nav */
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* active du liens vers la page actuelle */
+#navigation nav ul li a.active{
+    color: rgb(0 212 138);
+}
+
+/* les liens de nav en survol */
+#navigation nav ul li a:hover{
+    color: rgb(0 212 138);
+}
+
+/* le bouton menu encore caché */
+#navigation #menu {
+    display: none;
+    font-size: 25px;
+    color: rgb(21, 21, 100);
+    border-radius: 10px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+/* le boutons menu au survol */
+#navigation #menu:hover {
+    color: rgb(0 212 138);
+    border-color: rgb(0 212 138);
+}
+
+.menu2{
+    display: none;
+}
+
+/* ACCEUIL */
+
+/* petite animation ligne verticale */
+p#lignAnim {
+    border-left: 0.1px solid white;
+    position: absolute;
+    top: 60px;
+    height: 16vw;
+    transform: translateY(-130%);
+    transition: 2s ease;
+}
+
+
+#Acceuil{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("../images/ENI-banner.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    z-index: 1; /* mettre sous le navbar */
+}
+
+/* grand titre */
+#Acceuil h2{
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+/* paragraphe lorem */
+p#lorem{
+    width: 50%;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 25px;
+}
+
+#Acceuil .btn {
+    display: flex;
+    margin-top: 30px;
+    gap: 11px;
+    overflow: hidden;
+}
+
+#Acceuil a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: white;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* CARACTERISTIQUE */
+
+/* centrer la 2e section */
+#caract{
+    padding: 5vw 8vw 0 8vw;
+    text-align: center; 
+}
+
+/* regle l'alignement des blocs de presentation */
+#caract .cara-present{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+    /* annim */
+    /* transform: translateY(100px);
+    opacity: 0;
+    transition: transform 1s linear, opacity 1s ease-in-out; */
+}
+
+/* de gauche vers la droite les blocs interieurs */
+#caract .cara-box{
+    background: #f6f6ff;
+    text-align: start;
+    padding: 25px 15px 25px 25px;
+}
+
+#caract .cara-box:hover {
+    box-shadow: 0 0px 13px 0 rgb(31 38 135 / 21%);
+}
+
+/* taille et couleur de l'icone */
+#caract .cara-box i{
+    font-size: 2.3rem;
+    color: rgb(44, 44, 80);
+}
+
+/* titre de l'icone */
+#caract .cara-box h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(46, 46, 59);
+    padding: 13px 0 7px 0;
+}
+
+#caract .cara-box p{
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(70, 70, 87);
+}
+
+/* MENTIONS */
+
+#Mention{
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+    margin: 3vw;
+}
+
+#Mention .bloc-mention{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#Mention .mentions{
+    text-align: start;
+    background: #f6f6ff;
+    height: 100%;
+    position: relative;
+    border-radius: 5px;
+}
+
+#Mention .mentions:hover {
+    box-shadow: 0 0px 13px 0 rgb(31 38 135 / 21%);
+}
+
+.mentions .image {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+#Mention .mentions img {
+    width: 25%;
+    border-radius: 50%;
+    border: 5px solid rgb(35, 35, 85);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.mentions .image h6 {
+    background: rgb(35, 35, 85);
+    color: white;
+    border-radius: 0px 20px 20px 0px;
+    padding: 10px 13px 10px 36px;
+    position: relative;
+    right: 17px;
+    z-index: 1;
+}
+
+#Mention .mentions .detail {
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.detail p {
+    margin-top: 5px;
+}
+
+#Mention .mentions .nouveau {
+    background-color: yellow;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    right: 9px;
+    top: 93px;
+}
+
+#Mention .mentions i{
+    color: rgb(0 212 138);
+}
+
+/* INSCRIPTION */
+#inscription {
+    padding: 6vw 8vw 6vw 8vw;
+    background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 233, 0.5)), url(../images/signup.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+/* colorer paragraphe et titre en blanc */
+#inscription .rappel, #inscription .rappel h1{
+    color: white;
+}
+
+/* aligner horizontalement les dates */
+#inscription .rappel .temps{
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* transparent et flou */
+#inscription .rappel .temps .date{
+    text-align: center;
+    padding: 13px 33px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    margin: 0 5px 10px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Formulaire */
+#inscription form{
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 24vw;
+}
+
+#inscription form input{
+    margin: 15px 0;
+    padding: 15px 10px;
+    border: 1px solid rgb(84, 40, 241);
+    outline: none;
+    border-radius: 9px;
+}
+
+#inscription form input::placeholder{
+    color: #413c3c;
+    font-weight: 500;
+    font-size: 0.9;
+}
+
+#inscription form #submit {
+    background: rgb(0 212 138);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid rgb(0 212 138);
+    width: 8vw;
+    cursor: pointer;
+}
+
+#inscription form #submit:hover {
+    background: white;
+    color: rgb(0 212 138);
+    border: 1px solid rgb(0 212 138);
+}
+
+/* LES ENSEIGNANTS */
+
+#enseignant{
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+    margin-bottom: 3vw;
+}
+
+/* Mettre dans un tableau */
+#enseignant .bloc-enseignant{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin-top: 50px;
+}
+
+/* espacer les profiles */
+#enseignant .bloc-enseignant .profile {
+    background: #f1faf3;
+    padding: 30px 10px;
+    border-radius: 10px;
+}
+
+.profile:hover {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* photo de profil */
+.profile img {
+    width: 60%;
+    border-radius: 50%;
+    border: 5px solid #4053817d;
+    box-shadow: 0 0 0;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    cursor: pointer;
+}
+
+.profile h6{
+    padding: 20px 0 5px 0;
+}
+
+/* liens des profiles */
+.pro-liens{
+    margin-top: 10px;
+}
+
+.pro-liens i{
+    padding: 10px 10px;
+    border: 1px solid rgb(21 21 100 / 21%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.pro-liens i:hover{
+    background: rgb(21, 21, 100);
+    color: white;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 8vw;
+    background-color: #101C32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .footer-col{
+    padding-bottom: 40px;
+}
+
+footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+footer li{
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+footer li:hover {
+    color: rgb(241, 240, 245);
+}
+
+footer p{
+    color: #7b838a;
+}
+
+footer form{
+    margin-top: 20px;
+}
+
+footer input{
+    width: 220px;
+    padding: 15px 12px;
+    background: #334F6C;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+input#submitAbonne {
+    background: rgb(0 212 138);
+    color: rgb(21, 21, 100);
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid rgb(0 212 138);
+    width: max-content;
+    cursor: pointer;
+    padding: 13px 12px;
+}
+
+input#submitAbonne:hover{
+    background: white;
+    color: rgb(21, 21, 100);
+}
+
+footer .copyright{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+footer .copyright p{
+    color: white;
+}
+
+footer .copyright .pro-liens{
+    margin-top: 0px;
+}
+
+footer .copyright .pro-liens i{
+    background-color: #5f7185;
+    color: white;
+    border-radius: 0;
+}
+
+footer .copyright .pro-liens i:hover{
+    background: rgb(0 212 138);
+    color: #2c2c2c;
+}
+
+/* PAGE A PROPOS */
+#Acceuil-other {
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("../images/ENI-banner1.jpeg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position-y: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+#Acceuil-other h2 {
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+#Acceuil-other p#lignAnim {
+    border-left: 0.1px solid white;
+    position: absolute;
+    top: 60px;
+    height: 10vw;
+    transform: translateY(-130%);
+    transition: 2s ease;
+}
+
+.pres-img {
+    width: 35rem;
+    padding: 10px;
+}
+
+.pres-img img {
+    width: 100%;
+}
+
+/* PRESENTATION */
+.presentation {
+    display: flex;
+    align-items: center;
+    padding: 8vw 8vw 2vw 8vw;
+    justify-content: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.presentation .pres-texte {
+    width: 40%;
+    padding: 10px;
+}
+
+.presentation .pres-texte h2{
+    color: #29303B;
+    padding-bottom: 15px;
+}
+
+.presentation .pres-texte p{
+    color: #686F7A;
+    font-weight: 300;
+}
+
+.presentation .pres-texte .pres-illu{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.presentation .pres-texte .pres-illu img{
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 30px;
+}
+
+.presentation .pres-texte .pres-illu .illu-texte{
+    width: 90%;
+}
+
+.presentation .pres-texte .pres-illu .illu-texte h5{
+    font-size: 16px;
+    color: #29303B;
+}
+
+/* MISSION */
+section.mission {
+    display: flex;
+    padding: 5vw 8vw 0 8vw;
+    margin: 50px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+.mission div {
+    color: #3d4148;
+    font-weight: 300;
+    font-size: larger;
+    margin: 0 5vw;
+}
+
+.mission p {
+    margin-bottom: 5px;
+}
+
+/* SWIPER DU PARTENARIAT */
+#partenariat {
+    padding: 8vw 15vw 2vw 15vw;
+    text-align: center;
+}
+
+#partenariat h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+    margin-bottom: 50px;
+}
+
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+
+.carte.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-partenariat .swiper-pagination{
+    position: relative;
+    top: 1px;
+}
+
+/* Pagination */
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+    position: relative;
+    top: 0px;
+}
+
+#partenariat .bloc-partenariat .slide-navBtn{
+    color: rgb(21, 21, 100);
+    transition: color 0.3s ease;
+}
+
+#partenariat .bloc-partenariat .slide-navBtn:hover{
+    color: rgb(0 212 138);
+}
+
+#partenariat .bloc-partenariat .slide-navBtn::before,
+#partenariat .bloc-partenariat .slide-navBtn::after{
+    font-size: 20px;
+}
+
+#partenariat .bloc-partenariat .swiper-pagination-bullet{
+    background-color: rgba(30, 30, 146, 0.696);
+    opacity: 1;
+}
+
+#partenariat .bloc-partenariat .swiper-pagination-bullet-active{
+    background-color: rgb(21, 21, 100);
+}
+
+/*---------CONTACT--------------*/
+
+/* COORDONNÉES */
+#contact {
+    display: flex;
+    padding: 8vw;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#contact .coord{
+    width: 350px;
+}
+
+#contact .coord h2{
+    color: #2c234d;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: .8;
+    margin-bottom: 16px;
+}
+
+#contact .coord p{
+    color: #686875;
+    line-height: 24px;
+    margin-bottom: 33px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e4ed;
+}
+
+#contact .coord h3{
+    color: #2c234d;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+#contact .coord .coor-detail div{
+    display: flex;
+    gap: 10px;
+}
+
+#contact .coord .coor-detail div .get{
+    font-size: 16px;
+    line-height: 22px;
+    color: #5838fc;
+}
+
+#contact .coord .coor-detail div p{
+    font-size: 14px;
+    border-bottom: none;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+/* FORMULAIRE */
+#contact form{
+    width: 60%;
+    background: #f7f6fa;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+#contact form h4{
+    font-size: 24px;
+    color: #2c234d;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+#contact form p{
+    color: #686875;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+
+#contact form .form-ligne{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#contact form .form-ligne input{
+    width: 49%;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    border: none;
+    background: white;
+    color: #7e7c87;
+    outline: none;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+#contact form .form-col input,
+#contact form .form-col textarea{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    border: none;
+    background: white;
+    color: #7e7c87;
+    outline: none;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+#contact form .form-col #btn{
+    width: fit-content;
+    font-size: .9rem;
+    padding: 13px 25px;
+    background: rgb(21, 21, 100);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    margin: 0;
+}
+
+#contact form .form-col #btn:hover {
+    color: rgb(0 212 138);
+    background: white;
+}
+
+/* MAP */
+
+#map {
+    width: 95%;
+    margin: auto;
+    height: 70vh;
+    margin-bottom: 8vw;
+}
+
+#map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* LISTE DES ENSEIGNANTS */
+#enseignant.page-enseignant .bloc-enseignant {
+    background: #f6f6ff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#enseignant .bloc-enseignant .profile {
+    background: white;
+}
+
+/* MEDIAQUERY */
+@media screen and (max-width: 820px){
+    /* NAVIGATION */
+    #navigation {
+        padding: 15px 20px;
+    }
+
+    /* faire apparaitre l'icone de menu */
+    #navigation #menu{
+        display: initial;
+    }
+    
+    #navigation nav{
+        display: none; /* statut: initialement caché */
+    } 
+
+    /* menu 2 */
+    .menu2{
+        display: initial;
+        position: relative;
+    }
+
+    .menu2 nav {
+        padding-bottom: 10px;
+    }
+
+    .menu2 ul {
+        display: none;
+        height: 25vw;
+        flex-direction: column;
+        justify-content: space-around;
+        overflow: hidden;
+    }
+
+    .menu2 li {
+        margin-left: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .menu2 li.active{
+        background: rgb(0 212 138);
+    }
+    .menu2 li:hover{
+        background: rgb(0 212 138);
+    }
+
+    .menu2 li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-decoration: none;
+        color: rgb(21, 21, 100);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    /* Rendu flou de l'arrière plan */
+    .Acceuil-blur::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 633%;
+        backdrop-filter: blur(5px);
+        display: none;
+    } 
+
+    .Acceuil-blur.montrer::before{
+        display: initial; /* afficher le pseudo-element flou en attribuant la classe 'montrer'*/
+    }
+
+    /* INSCRIPTION */
+
+    #inscription form {
+        width: 45rem;
+    }
+
+    #inscription form #submit {
+        font-size: 2vw;
+        width: 10vw;
+    }
+
+    /* ENSEIGNANT */
+
+    /* Mettre en scrollbar les enseignants */
+    #enseignant .bloc-enseignant{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    
+    #enseignant .bloc-enseignant::-webkit-scrollbar{
+        margin-top: 5px;
+        width: 10px;
+        height: 5px;
+    }
+    
+    #enseignant .bloc-enseignant::-webkit-scrollbar-track{
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    #enseignant .bloc-enseignant::-webkit-scrollbar-thumb{
+        background: rgb(24, 24, 49);
+        border-radius: 10px;
+    }
+
+    #enseignant .bloc-enseignant .profile {
+        padding: 30px 10px;
+        border-radius: 10px;
+        width: 15rem;
+    }
+
+    /* A PROPOS */
+
+    /* Presentation */
+    .presentation {
+        flex-wrap: wrap;
+    }
+
+    /* taille image */
+    .pres-img {
+        width: 25rem;
+        padding: 0;
+    }
+    
+    /* largeur du bloc text */
+    .presentation .pres-texte {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* titre */
+    .presentation .pres-texte h2 {
+        font-size: larger;
+    }
+
+    /* presentation texte */
+    .presentation .pres-texte p, .presentation .pres-texte .pres-illu {
+        font-size: medium;
+    }
+
+    /* CARACTERISTIQUE */
+    .caracteristique.a-propos h1{
+        font-size: x-large;
+    }
+
+    .caracteristique.a-propos p{
+        font-size: medium;
+    }
+
+    .presentation.pre-1, .presentation.pre-2 {
+        flex-direction: column;
+    }
+    .presentation.pre-2{
+        flex-direction: column-reverse;
+    }
+
+    /* Mission */
+    .mission h2 {
+        font-size: 2rem;
+    }
+
+    /* texte mission */
+    .mission div {
+        font-size: large;
+        margin: 0;
+    }
+
+    /* marge */
+    section.mission {
+        padding: 5vw 8vw 0 8vw;
+        margin: 25px 0 25px 0;
+    }
+
+    /* CONTACT */
+
+    /* FORMULAIRE */
+    #contact {
+        padding: 8vw 4vw;
+        gap: 10px;
+    }
+
+    /* COORDONEE */
+    #contact .coord {
+        width: 250px;
+    }
+
+    /* PAGE ENSEIGNANT */
+    #enseignant.page-enseignant .bloc-enseignant {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        overflow-x: initial;
+        padding: 2px 50px 0 50px;
+    }
+
+    #enseignant.page-enseignant .bloc-enseignant .profile {
+        width: 100%;
+        margin: auto;
+    }
+
+    #enseignant.page-enseignant {
+        padding: 8vw 0vw 0 0vw;
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+}
+
+@media (max-width:475px){
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .mentions .image h6 {
+        font-size: small;
+    }
+
+    #caract .cara-box h3 {
+        font-size: larger;
+    }
+
+    #caract .cara-box p {
+        font-size: medium;
+    }
+
+    #inscription {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #inscription form {
+        width: initial;
+    }
+    #inscription form #submit {
+        font-size: 3vw;
+        width: 17vw;
+    }
+    #inscription .rappel .temps {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    /* A PROPOS */
+
+    /* Presentation */
+    .presentation .pres-texte h2 {
+        font-size: larger;
+    }
+
+    /* p */
+    .presentation .pres-texte p, .presentation .pres-texte .pres-illu {
+        font-size: medium;
+    }
+    .presentation.pre-1, .presentation.pre-2 {
+        flex-direction: column;
+    }
+    .presentation.pre-2{
+        flex-direction: column-reverse;
+    }
+
+    /* Mission */
+    .mission h2 {
+        font-size: larger;
+    }
+
+    /* texte mission */
+    .mission div {
+        font-size: medium;
+        margin: 0;
+    }
+
+    /* CONTACT */
+
+    #contact {
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+    }
+
+    /* COORDONEE */
+    #contact .coord {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* FORMULAIRE */
+    #contact form {
+        width: 100%;
+        padding: 40px 30px;
+    }
+
+    #contact form .form-ligne {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    #contact form .form-ligne input{
+        width: 100%;
+    }
+
+    /* ADMIN */
+    /* mettre en-dessous le changement de mode */
+    .mode {
+        position: absolute;
+        right: 0;
+        top: 65%;
+    }
+}
+
+/* ANNIMATION */
+
+/* CARACTERISTIQUE */
+.caracteristique .cara-present{
+    opacity: 0.5;
+    transform: translateY(60%);
+    transition: opacity 1s ease-in-out, transform 1s ease;
+}
+
+.caracteristique.montrer-anime .cara-present{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* INDEX */
+
+/* titre petit -> grand */
+#Acceuil h2{
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 2s ease-in-out, transform 2s ease;
+}
+#Acceuil h2.montrer-anime{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* lorem invisible -> visible */
+p#lorem{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+p#lorem.montrer-anime{
+    opacity: 1;
+}
+
+
+/* boutons en-bas -> en-Haut */
+#Acceuil .boutons{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: opacity 2s ease-in-out, transform 2s linear, background-color 0.5s ease;
+}
+#Acceuil .boutons.montrer-anime{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Mention en-bas -> en-Haut */
+#Mention .bloc-mention .mentions .image,
+#Mention .bloc-mention .mentions .detail{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 2s ease-in-out, transform 1s linear;
+}
+#Mention.montrer-anime .bloc-mention .mentions .image,
+#Mention.montrer-anime .bloc-mention .mentions .detail{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rappel d'inscription */
+#inscription .rappel{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+#inscription.montrer-anime .rappel{
+    opacity: 1;
+}
+
+/* Enseignant */
+#enseignant .bloc-enseignant .profile{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 2s ease-in-out, transform 1s linear, box-shadow 0.5s ease;;
+}
+#enseignant.montrer-anime .bloc-enseignant .profile{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* A PROPOS */
+
+/* H2 debut */
+.Acceuil-blur.propos h2{
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.Acceuil-blur.propos.montrer-anime h2{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* PRESENTATION */
+
+/* presentation 1 */
+.presentation.pre-1 .pres-img{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-1 .pres-texte{
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-1.montrer-anime .pres-img{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.presentation.pre-1.montrer-anime .pres-texte{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* presentation 2 */
+.presentation.pre-2 .pres-img{
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-2 .pres-texte{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-2.montrer-anime .pres-img{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.presentation.pre-2.montrer-anime .pres-texte{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* presentation 3 */
+.presentation.pre-3 .pres-img{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-3 .pres-texte{
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 2s ease-in-out, transform 1s ease;
+}
+
+.presentation.pre-3.montrer-anime .pres-img{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.presentation.pre-3.montrer-anime .pres-texte{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ADMIN */
+
+/* Enlever une modification du bootstrap */
+#navigation nav ul {
+    margin-bottom: 0;
+}
+
+/* MODE */
+.mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Boutons changement generale */
+a.admin-user {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: white;
+    border: 1px solid;
+}
+/* admin */
+a.admin-user.admin{
+    background: rgb(21, 21, 100);
+}
+a.admin-user.admin:hover {
+    background: white;
+    color: rgb(21, 21, 100);
+}
+/* user */
+a.admin-user.user{
+    background: rgb(0 212 138);
+}
+a.admin-user.user:hover{
+    background: white;
+    color: rgb(0 212 138);
+}
+
+/* ICONE */
+.mode i.fa-user-tie, .mode i.fa-user {
+    font-size: 25px;
+    color: rgb(21, 21, 100);
+}
+/* adminIco */
+.mode i.fa-user-tie{
+    color: rgb(21, 21, 100);
+}
+/* userIco */
+.mode i.fa-user{
+    color: rgb(0 212 138);
+}
+
+/* enseignant */
+.profile .bouton {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+/* Boutons ajout suppr */
+.bouton i {
+    font-size: 20px;
+    width: 50%;
+    padding: 5px 0 5px 0;
+}
+.bouton i:hover {
+    cursor: pointer;
+}
+.bouton i.fa-pen-to-square:hover {
+    cursor: pointer;
+    background: rgb(255 255 70);
+    color: white;
+    transition: all 0.6s ease;
+}
+.bouton i.fa-xmark:hover {
+    cursor: pointer;
+    background: rgb(255 72 72);
+    color: white;
+    transition: all 0.6s ease;
+}
+
+/* Boutons ajout */
+.bloc-enseignant .ajouter-enseignant:hover{
+    cursor: pointer;
+}
+
+/* formulaire de enseignant */
+section.Sec-formulaire {
+    opacity: 0;
+    transform: translateY(50%);
+    width: 42%;
+    padding: 26px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: fixed;
+    top: 15%;
+    left: 32%;
+    backdrop-filter: blur(11px);
+    z-index: 10000;
+    display: none;
+}
+
+/* montrer formulaire */
+section.Sec-formulaire.montrer-anime {
+    display: initial;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 10s ease;
+}
+
+/* Espacer */
+.row {
+    gap: 20px;
+}
+
+i.fermer {
+    position: absolute;
+    right: 35px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#enseignant .bloc-enseignant .profile#ajout {
+    background-color: #f6f6ff;
+}
+
+#enseignant .bloc-enseignant .profile#ajout:hover {
+    box-shadow: none;
+}
+
+.ajouter-enseignant {
+    position: relative;
+}
+
+.ajouter-enseignant i {
+    font-size: 50px;
+    padding: 15%;
+    border-radius: 15px;
+    background: white;
+    position: absolute;
+    left: 27%;
+    top: 25%;
+}
+
+.ajouter-enseignant i:hover {
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 22%);
+}
+
+/* Notification de success */
+
+/* .bloc-notif{
+    display: none;
+} 
+
+.bloc-notif .notif {
+    opacity: 0;
+    transform: translateY(-50%);   
+}
+*/
+
+.bloc-notif .notif {
+    position: absolute;
+    top: -48px;
+    /* border: 1px solid black; */
+    box-shadow: 0 8px 30px 0 rgba(31, 38, 135, 0.37);
+    left: 39%;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: rgb(0 212 138);
+}
+.bloc-notif.montrer-anime .notif .success{
+    
+}
+
+.bloc-notif .notif .success{
+    display: inline-block;
+    width: 15px;
+    color: rgb(0 212 138);
+}
+
+.bloc-notif .notif .success i {
+    overflow: hidden;
+    width: 15px;
+}
