@@ -1,30 +1,58 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="./frontend/css/style.css">
+    <link rel="stylesheet" href="../../frontend/css/style.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="./frontend/Fonts/css/all.min.css">
+    <link rel="stylesheet" href="../../frontend/Fonts/css/all.min.css">
 
     <!-- Jquery -->
-    <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+    <script src="../../frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+        #navigation div {
+            display: flex;
+            gap: 17px;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
     <header>
         <div id="navigation">
-            <p><img src="./frontend/images/Logo ENI.png" alt="logoEni"></p>
+            <p><img src="../../frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
-                    <li><a href="index.html">Acceuil</a></li>
-                    <li><a href="a propos.html">A propos</a></li>
-                    <li><a href="mentions.html">Mentions</a></li>
-                    <li><a href="enseignant.html">Enseignant</a></li>
+                    <li><a href="../index/index-admin.php">Acceuil</a></li>
+                    <li><a href="../a propos/a propos-admin.php">A propos</a></li>
+                    <!-- <li><a href="../mentions.html">Mentions</a></li> -->
+                    <li><a href="../enseignant/enseignant-admin.php">Enseignant</a></li>
                     <li class="active"><a class="active" href="#">Contact</a></li>
+                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
+                    <?php
+                        if (!isset($_SESSION['ID_user'])) {?>
+                            <li><a href="./login/login.html">Login</a></li></ul></nav><i id="menu" class="fa-solid fa-bars"></i><?php
+                        }
+                    ?>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
+            <div class="mode">
+                <a href="./contact_userView.php" class="admin-user admin"><i class="fa-solid fa-unlock"></i> Admin mode</a>
+                <i class="fa-solid fa-user-tie"></i>
+                <?php
+                    include ("../../lienLogAdmin.php");
+                ?>
+            </div>
         </div>
         <div class="menu2"></div>
     </header>
@@ -140,8 +168,8 @@
 </body>
 
 <!-- Js -->
-<script src="./frontend/script/navigation.js"></script>
+<script src="../../frontend/script/navigation.js"></script>
 
 <!-- ANIMATION -->
-<script src="./frontend/script/animation.js"></script>
+<script src="../../frontend/script/animation.js"></script>
 </html>

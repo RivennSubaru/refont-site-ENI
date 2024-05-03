@@ -50,4 +50,6 @@ function affichage() {
 }
 
 /* Afficher lors du chargement de la page */
-window.onload = affichage;
+/* window.onload = affichage; */
+
+// TSY MAINTSY NATAO TANY @ PAGE HTML PRINCIPALE LES 2 AFFICHAGES SATRIA MIFAMPI-TAINGINA DE TSY METY

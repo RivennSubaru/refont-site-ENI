@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,17 @@
 
     <!-- Jquery -->
     <script src="../../frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+        #navigation div {
+            display: flex;
+            gap: 17px;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
@@ -22,17 +37,21 @@
             <p><img src="../../frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
-                    <li><a href="../../index.html">Acceuil</a></li>
-                    <li><a href="../../a propos.html">A propos</a></li>
-                    <li><a href="../../mentions.html">Mentions</a></li>
-                    <li class="active"><a class="active" href="#">Enseignant</a></li>
-                    <li><a href="../../contact.html">Contact</a></li>
+                    <li><a href="../index/index-admin.php">Acceuil</a></li>
+                    <li><a href="../a propos/a propos-admin.php">A propos</a></li>
+                    <!--<li><a href="../../mentions.html">Mentions</a></li>-->
+                    <li class="active"><a class="active" href="">Enseignant</a></li>
+                    <li><a href="../contact/contact-admin.php">Contact</a></li>
+                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
             <div class="mode">
-                <a href="../../enseignant.html" class="admin-user admin"><i class="fa-solid fa-unlock"></i> Admin mode</a>
+                <a href="./enseignant_userView.php" class="admin-user admin"><i class="fa-solid fa-unlock"></i> Admin mode</a>
                 <i class="fa-solid fa-user-tie"></i>
+                <?php
+                    include ("../../lienLogAdmin.php");
+                ?>
             </div>
         </div>
         <div class="menu2"></div>
@@ -113,10 +132,11 @@
 
     <!-- Formulaire -->
     <section class="Sec-formulaire">
-        <div class="bloc-notif">
-            <div class="notif">
-                bien joué <span class="success"><i class="fa-solid fa-check"></i></span>
-            </div>
+        <div class="notif reussite">
+            bien joué <span class="icone"><i class="fa-solid fa-check"></i></span>
+        </div>
+        <div class="notif echec">
+            ajout échoué <span class="icone"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <i class="fa-solid fa-xmark fermer"></i>
         <h2 class="mt-5 mb-5">Inserer l'enseignant</h2>
@@ -136,7 +156,6 @@
                 </div>
                 <div class="col-lg mt-5">
                     <button class="btn btn-success" id="submit" onclick="ajouter()">Ajouter</button>
-                    <button class="btn btn-primary" id="Maj" onclick="maj()">Mettre à jours</button>
                 </div>
             </div>
         </div>
@@ -192,12 +211,12 @@
 <!-- JS Bootstrap -->
 <script src="../../frontend/script/bootstrap/bootstrap.bundle.min.js"></script>
 
-<!-- JS enseignant -->
-<script src="../../frontend/script/enseignant.js"></script>
-
 <!-- JS enseignant admin -->
 <script src="./enseignant-admin.js"></script>
 
 <!-- ANIMATION -->
 <script src="../../frontend/script/animation.js"></script>
+
+<!-- Notification-->
+<script src="./notification.js"></script>
 </html>

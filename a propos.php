@@ -1,19 +1,27 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>A propos</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../frontend/css/bootstrap.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../frontend/css/style.css">
-
+    <link rel="stylesheet" href="./frontend/css/style.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="../../frontend/Fonts/css/all.min.css">
+    <link rel="stylesheet" href="./frontend/Fonts/css/all.min.css">
 
     <!-- Jquery -->
-    <script src="../../frontend/script/jquery-3.7.1.min.js"></script>
+    <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- Swipe -->
+    <link rel="stylesheet" href="./frontend/swiper/swiper-bundle.min.css">
+
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
@@ -22,11 +30,12 @@
             <p><img src="./frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
-                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="index.php">Acceuil</a></li>
                     <li class="active"><a class="active" href="#">A propos</a></li>
-                    <li><a href="./mentions.html">Mentions</a></li>
-                    <li><a href="./enseignant.html">Enseignant</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <!--<li><a href="./mentions.html">Mentions</a></li>-->
+                    <li><a href="./enseignant.php">Enseignant</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <?php include ("lienLog.php"); ?>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>

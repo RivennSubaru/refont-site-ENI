@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,13 @@
 
     <!-- Jquery -->
     <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
@@ -19,18 +30,15 @@
             <p><img src="./frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
-                    <li><a href="index.html">Acceuil</a></li>
-                    <li><a href="a propos.html">A propos</a></li>
-                    <li><a href="mentions.html">Mentions</a></li>
-                    <li class="active"><a class="active" href="enseignant.html">Enseignant</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Acceuil</a></li>
+                    <li><a href="a propos.php">A propos</a></li>
+                    <!--<li><a href="mentions.html">Mentions</a></li>-->
+                    <li class="active"><a class="active" href="enseignant.php">Enseignant</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <?php include ("lienLog.php"); ?>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
-            <div class="mode">
-                <a href="./admin/enseignant/enseignant-admin.html" class="admin-user user"><i class="fa-solid fa-lock"></i> Admin mode</a>
-                <i class="fa-solid fa-user"></i>
-            </div>
         </div>
         <div class="menu2"></div>
     </header>

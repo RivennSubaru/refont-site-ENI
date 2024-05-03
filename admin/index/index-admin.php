@@ -1,27 +1,59 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Refont ENI</title>
-    <link rel="stylesheet" href="./frontend/css/style.css">
-    <link rel="stylesheet" href="./frontend/Fonts/css/all.min.css">
-    <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- CSS generale -->
+    <link rel="stylesheet" href="../../frontend/css/style.css">
+
+    <!-- CSS personnel -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="../../frontend/Fonts/css/all.min.css">
+
+    <!-- JQuery -->
+    <script src="../../frontend/script/jquery-3.7.1.min.js"></script>
+
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+        #navigation div {
+            display: flex;
+            gap: 17px;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
     <header>
         <div id="navigation">
-            <p><img src="./frontend/images/Logo ENI.png" alt="logoEni"></p>
+            <p><img src="../../frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
                     <li class="active"><a class="active" href="#">Acceuil</a></li>
-                    <li><a href="./a propos.html">A propos</a></li>
-                    <li><a href="./mentions.html">Mentions</a></li>
-                    <li><a href="./enseignant.html">Enseignant</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="../a propos/a propos-admin.php">A propos</a></li>
+                    <!--<li><a href="../../mentions.html">Mentions</a></li>-->
+                    <li><a href="../enseignant/enseignant-admin.php">Enseignant</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
+            <div class="mode">
+                <a href="./index_userView.php" class="admin-user admin"><i class="fa-solid fa-unlock"></i> Admin mode</a>
+                <i class="fa-solid fa-user-tie"></i>
+                <?php
+                    include ("../../lienLogAdmin.php");
+                ?>
+            </div>
         </div>
         <div class="menu2" ></div>
     </header>
@@ -32,8 +64,8 @@
         <h2>École Ingénieuse, La Pépinière Des Élites Informaticiennes</h2>
         <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odit tenetur nostrum, ducimus magnam rem dolorum tempora excepturi laudantium error voluptatibus officia alias dignissimos quas iure hic ea ipsa in?</p>
         <div class="btn">
-            <a href="./a propos.html" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
-            <a href="./contact.html#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="../../a propos.php" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
+            <a href="../../contact.php#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
         </div>
     </section>
     
@@ -67,7 +99,7 @@
         <div class="bloc-mention">
             <div class="mentions">
                 <div class="image">
-                    <img src="./frontend/images/illustrations/IG.jpg " alt="IG">
+                    <img src="../../frontend/images/illustrations/IG.jpg " alt="IG">
                     <h6>IG (Informatique Générale)</h6>
                 </div>
                 <div class="detail">
@@ -77,7 +109,7 @@
             </div>
             <div class="mentions">
                 <div class="image">
-                    <img src="./frontend/images/illustrations/Pro.jpg " alt="IG">
+                    <img src="../../frontend/images/illustrations/Pro.jpg " alt="IG">
                     <h6>PRO (Informatique Professionnel)</h6>
                 </div>
                 <div class="detail">
@@ -87,7 +119,7 @@
             </div>
             <div class="mentions">
                 <div class="image">
-                    <img src="./frontend/images/illustrations/GB.jpg" alt="IG">
+                    <img src="../../frontend/images/illustrations/GB.jpg" alt="IG">
                     <h6>GB (Génie logiciel et base de données)</h6>
                 </div>
                 <div class="detail">
@@ -97,7 +129,7 @@
             </div>
             <div class="mentions">
                 <div class="image">
-                    <img src="./frontend/images/illustrations/SR.jpg " alt="IG">
+                    <img src="../../frontend/images/illustrations/SR.jpg " alt="IG">
                     <h6>SR (Système et Réseaux)</h6>
                 </div>
                 <div class="detail">
@@ -107,7 +139,7 @@
             </div>
             <div class="mentions">
                 <div class="image">
-                    <img src="./frontend/images/illustrations/IA.jpg" alt="IG">
+                    <img src="../../frontend/images/illustrations/IA.jpg" alt="IG">
                     <h6>IA (Intélligence Artificiel)</h6>
                 </div>
                 <div class="detail">
@@ -122,25 +154,31 @@
     </section>
 
     <!-- Insription -->
+    <div class="notification reussite">
+        bien joué <span class="icone"><i class="fa-solid fa-check"></i></span>
+    </div>
+    <div class="notification echec">
+        ajout échoué <span class="icone"><i class="fa-solid fa-xmark"></i></span>
+    </div>
     <section id="inscription">
         <div class="rappel">
             <p>Envie de rejoindre notre groupe d'élite ?</p>
             <p>Ne perdez pas de temps et faites l'inscription en ligne pour faciliter votre inscription au concours</p>
             <h1>Inscrivez-vous dès maintenant</h1>
             <div class="temps">
-                <div class="date jrs">
-                    18 <br> Jours
+                <div class="date">
+                    *Date
                 </div>
-                <div class="date hrs">
-                    29 <br> Heures
-                </div>
-                <div class="date min">
-                    06 <br> Minutes
-                </div>
-                <div class="date sec">
-                    58 <br> Secondes
-                </div>
+                <button class="date modif">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
             </div>
+        </div>
+        <div class="formDate">
+            <i class="fa-solid fa-xmark fermer"></i>
+            <h2>Entrer nouvelle date d'inscription</h2>
+            <input type="datetime-local" name="date" id="date">
+            <button class="modifDate" onclick="setDate()">Modifier</button>
         </div>
 
         <form action="" method="post">
@@ -158,7 +196,7 @@
         <p>Nous disposant de meilleurs enseignants ayant de très bonne expérience</p>
         <div class="bloc-enseignant">
             <div class="profile">
-                <img src="./frontend/images/Les enseignants/Ando.jpg" alt="photoAndo">
+                <img src="../../frontend/images/Les enseignants/Ando.jpg" alt="photoAndo">
                 <h6>Professeur Ando</h6>
                 <p>Python & Algorithme Avancé</p>
                 <div class="pro-liens">
@@ -168,7 +206,7 @@
                 </div>
             </div>
             <div class="profile">
-                <img src="./frontend/images/Les enseignants/Giovanni.jpg" alt="photoGio">
+                <img src="../../frontend/images/Les enseignants/Giovanni.jpg" alt="photoGio">
                 <h6>Docteur Giovanni</h6>
                 <p>Java & Data Analyste</p>
                 <div class="pro-liens">
@@ -178,7 +216,7 @@
                 </div>
             </div>
             <div class="profile">
-                <img src="./frontend/images/Les enseignants/Jesse.jpg" alt="photoJesse">
+                <img src="../../frontend/images/Les enseignants/Jesse.jpg" alt="photoJesse">
                 <h6>Docteur Jesse</h6>
                 <p>Developpeur Backend</p>
                 <div class="pro-liens">
@@ -188,7 +226,7 @@
                 </div>
             </div>
             <div class="profile">
-                <img src="./frontend/images/Les enseignants/Romeo.jpg" alt="photoRomeo">
+                <img src="../../frontend/images/Les enseignants/Romeo.jpg" alt="photoRomeo">
                 <h6>Professeur Roméo</h6>
                 <p>Développeur full stack</p>
                 <div class="pro-liens">
@@ -198,7 +236,7 @@
                 </div>
             </div>
             <div class="profile">
-                <img src="./frontend/images/Les enseignants/Roberto.jpg" alt="photoAndo">
+                <img src="../../frontend/images/Les enseignants/Roberto.jpg" alt="photoAndo">
                 <h6>Docteur Roberto</h6>
                 <p>Expert Intelligence Artificiel</p>
                 <div class="pro-liens">
@@ -259,11 +297,25 @@
 </body>
 
 <!-- CUSTOM -->
-<script src="./frontend/script/index.js"></script>
+<script src="../../frontend/script/index.js"></script>
 
 <!-- navBar -->
-<script src="./frontend/script/navigation.js"></script>
+<script src="../../frontend/script/navigation.js"></script>
 
 <!-- Afficher enseignant -->
-<script src="./backend/afficherIndex.js"></script>
+<script src="../../backend/afficherIndex.js"></script>
+
+<!-- Compte à rebours -->
+<script src="./modifierConteRebours.js"></script>
+
+<!-- Evennement personnel -->
+<script src="./evennement.js"></script>
+
+<!-- Afficher les enseignants et date choisi -->
+<script>
+    window.addEventListener("load", function () {
+        affichage();
+        affichageDate();
+    })
+</script>
 </html>

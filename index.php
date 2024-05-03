@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,13 @@
     <link rel="stylesheet" href="./frontend/css/style.css">
     <link rel="stylesheet" href="./frontend/Fonts/css/all.min.css">
     <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+    
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
@@ -15,13 +26,14 @@
             <nav>
                 <ul>
                     <li class="active"><a class="active" href="#">Acceuil</a></li>
-                    <li><a href="./a propos.html">A propos</a></li>
-                    <li><a href="./mentions.html">Mentions</a></li>
-                    <li><a href="./enseignant.html">Enseignant</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
+                    <li><a href="./a propos.php">A propos</a></li>
+                    <!--<li><a href="./mentions.html">Mentions</a></li>-->
+                    <li><a href="./enseignant.php">Enseignant</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <?php include ("lienLog.php"); ?>
+                <!-- </ul>
             </nav>
-            <i id="menu" class="fa-solid fa-bars"></i>
+            <i id="menu" class="fa-solid fa-bars"></i> -->
         </div>
         <div class="menu2" ></div>
     </header>
@@ -32,8 +44,8 @@
         <h2>École Ingénieuse, La Pépinière Des Élites Informaticiennes</h2>
         <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odit tenetur nostrum, ducimus magnam rem dolorum tempora excepturi laudantium error voluptatibus officia alias dignissimos quas iure hic ea ipsa in?</p>
         <div class="btn">
-            <a href="./a propos.html" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
-            <a href="./contact.html#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="./a propos.php" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
+            <a href="./contact.php#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
         </div>
     </section>
     
@@ -266,4 +278,15 @@
 
 <!-- Afficher enseignant -->
 <script src="./backend/afficherIndex.js"></script>
+
+<!-- Compte à rebours -->
+<script src="./frontend/script/compte_a_rebours.js"></script>
+
+<!-- Afficher les enseignants et date choisi -->
+<script>
+    window.addEventListener("load", function () {
+        affichage();
+        affichageDate();
+    });
+</script>
 </html>

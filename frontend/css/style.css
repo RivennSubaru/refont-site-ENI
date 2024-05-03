@@ -362,8 +362,23 @@ p#lorem{
     font-weight: 600;
 }
 
+.temps .date.modif i {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+button.date.modif {
+    cursor: pointer;
+}
+
+form.formDate {
+    position: absolute;
+    left: 38%;
+}
+
 /* Formulaire */
-#inscription form{
+#inscription form, .formDate{
     background: white;
     border-radius: 8px;
     display: flex;
@@ -413,11 +428,14 @@ p#lorem{
 }
 
 /* Mettre dans un tableau */
-#enseignant .bloc-enseignant{
+#enseignant .bloc-enseignant {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1rem;
     margin-top: 50px;
+    background: #f6f6ff;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* espacer les profiles */
@@ -1523,38 +1541,58 @@ i.fermer {
 
 /* Notification de success */
 
-/* .bloc-notif{
-    display: none;
-} 
-
-.bloc-notif .notif {
-    opacity: 0;
-    transform: translateY(-50%);   
+/* icone des notification*/
+.notif .icone{
+    display: inline-block;
+    width: 15px;
 }
-*/
 
-.bloc-notif .notif {
+.notif.reussite .icone{
+    color: rgb(0 212 138);
+}
+.notif.echec .icone{
+    color: rgb(255 72 72);;
+}
+
+/* Bloc des notif en globalité*/
+.notif {
     position: absolute;
-    top: -48px;
+    top: -100px;
     /* border: 1px solid black; */
     box-shadow: 0 8px 30px 0 rgba(31, 38, 135, 0.37);
     left: 39%;
     background: white;
     padding: 5px 15px;
     border-radius: 20px;
-    color: rgb(0 212 138);
-}
-.bloc-notif.montrer-anime .notif .success{
-    
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease;
 }
 
-.bloc-notif .notif .success{
-    display: inline-block;
-    width: 15px;
+.notif.reussite{
     color: rgb(0 212 138);
 }
 
-.bloc-notif .notif .success i {
+.notif.echec{
+    color: rgb(255 72 72);
+}
+
+/* Annimation d'aparrition des notifications */
+.apparait{
+    opacity: 1;
+    transform: translateY(50px);
+}
+
+.disparait{
+    opacity: 0;
+}
+
+/* Annimation super cool des icones */
+.notif.reussite .icone i {
     overflow: hidden;
+    width: 0px;
+    transition: width 2.5s ease;
+}
+
+.Sec-formulaire .notif.reussite .icone.decale i{
     width: 15px;
 }

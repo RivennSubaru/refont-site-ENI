@@ -1,33 +1,56 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>A propos</title>
-    <link rel="stylesheet" href="./frontend/css/style.css">
+    <link rel="stylesheet" href="../../frontend/css/style.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="./frontend/Fonts/css/all.min.css">
+    <link rel="stylesheet" href="../../frontend/Fonts/css/all.min.css">
 
     <!-- Jquery -->
-    <script src="./frontend/script/jquery-3.7.1.min.js"></script>
+    <script src="../../frontend/script/jquery-3.7.1.min.js"></script>
 
     <!-- Swipe -->
-    <link rel="stylesheet" href="./frontend/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../frontend/swiper/swiper-bundle.min.css">
+
+    <!-- hover d'apparition du bloc de deconnexion -->
+    <style>
+        .compteUser:hover .infoUser {
+            display: flex !important;
+        }
+        #navigation div {
+            display: flex;
+            gap: 17px;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tete-->
     <header>
         <div id="navigation">
-            <p><img src="./frontend/images/Logo ENI.png" alt="logoEni"></p>
+            <p><img src="../../frontend/images/Logo ENI.png" alt="logoEni"></p>
             <nav>
                 <ul>
-                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="../index/index_userView.php">Acceuil</a></li>
                     <li class="active"><a class="active" href="#">A propos</a></li>
-                    <li><a href="./mentions.html">Mentions</a></li>
-                    <li><a href="./enseignant.html">Enseignant</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <!--<li><a href="./mentions.html">Mentions</a></li>-->
+                    <li><a href="../enseignant/enseignant_userView.php">Enseignant</a></li>
+                    <li><a href="../contact/contact_userView.php">Contact</a></li>
+                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
+            <div class="mode">
+                <a href="./a propos-admin.php" class="admin-user user"><i class="fa-solid fa-lock"></i> Admin mode</a>
+                <i class="fa-solid fa-user"></i>
+                <?php
+                    include ("../../lienLogAdmin.php");
+                ?>
+            </div>
         </div>
         <div class="menu2"></div>
     </header>
@@ -41,7 +64,7 @@
     <!-- presentation1 -->
     <section class="presentation pre-1">
         <div class="pres-img">
-            <img src="./frontend/images/about/3.png" alt="">
+            <img src="../../frontend/images/about/3.png" alt="">
         </div>
 
         <div class="pres-texte">
@@ -49,14 +72,14 @@
             <p>Située au cœur de Fianarantsoa, notre université est dédiée à l'excellence dans l'enseignement 
             de l'informatique et à la formation de professionnels compétents et innovants.</p>
             <div class="pres-illu">
-                <img src="./frontend/images/illustrations/fe1.png" alt="">
+                <img src="../../frontend/images/illustrations/fe1.png" alt="">
                 <div class="illu-texte">
                     <h5>+4 mentions informatiques</h5>
                     <p>Un enseignement excellent qui vous garantie un avenir meilleurs</p>
                 </div>
             </div>
             <div class="pres-illu">
-                <img src="./frontend/images/illustrations/fe2.png" alt="">
+                <img src="../../frontend/images/illustrations/fe2.png" alt="">
                 <div class="illu-texte">
                     <h5>Taux d'employabilité élevé</h5>
                     <p>ENI assure votre vie dans le monde professionnel. Ainsi le taux de déboucher après l'obtention du diplôme reste haute</p>
@@ -122,7 +145,7 @@
         </div>
 
         <div class="pres-img">
-            <img src="./frontend/images/about/pres1.png" alt="">
+            <img src="../../frontend/images/about/pres1.png" alt="">
         </div>
     </section>
 
@@ -130,7 +153,7 @@
     <section class="presentation pre-3">
         
         <div class="pres-img">
-            <img src="./frontend/images/about/pres2.png" alt="">
+            <img src="../../frontend/images/about/pres2.png" alt="">
         </div>
         <div class="pres-texte">
             <h2>Mention et parcours</h2>
@@ -156,15 +179,15 @@
         <h2>Nos Partenaires</h2>
         <div class="bloc-partenariat swiper">
             <div class="slide swiper-wrapper">
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/Ambatovy-150x150.jpg" alt="ambatovy"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/AUF-150x150.jpg" alt="AUF"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/axian-logo-1-150x150.png" alt="axian"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/Bianco-150x150.jpg" alt="bianco"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/BNGRC-150x150.jpg" alt="BNGRC"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/Hello-Tana-150x150.jpg" alt="Hello-Tana"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/INSTAT-150x150.jpg" alt="INSTAT"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/MESUPRES-150x150.jpg" alt="MESUPRES"></div>
-                <div class="carte swiper-slide"><img src="./frontend/images/partenariat/Relia-150x150.jpg" alt="Relia"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/Ambatovy-150x150.jpg" alt="ambatovy"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/AUF-150x150.jpg" alt="AUF"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/axian-logo-1-150x150.png" alt="axian"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/Bianco-150x150.jpg" alt="bianco"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/BNGRC-150x150.jpg" alt="BNGRC"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/Hello-Tana-150x150.jpg" alt="Hello-Tana"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/INSTAT-150x150.jpg" alt="INSTAT"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/MESUPRES-150x150.jpg" alt="MESUPRES"></div>
+                <div class="carte swiper-slide"><img src="../../frontend/images/partenariat/Relia-150x150.jpg" alt="Relia"></div>
             </div>
             <div class="swiper-button-next slide-navBtn"></div>
             <div class="swiper-button-prev slide-navBtn"></div>
@@ -218,14 +241,14 @@
     </footer>
 </body>
 <!-- Swiper -->
-<script src="./frontend/swiper/swiper-bundle.min.js"></script>
+<script src="../../frontend/swiper/swiper-bundle.min.js"></script>
 
 <!-- navBar -->
-<script src="./frontend/script/navigation.js"></script>
+<script src="../../frontend/script/navigation.js"></script>
 
 <!-- Custom -->
-<script src="./frontend/script/a-propos.js"></script>
+<script src="../../frontend/script/a-propos.js"></script>
 
 <!-- ANIMATION -->
-<script src="./frontend/script/animation.js"></script>
+<script src="../../frontend/script/animation.js"></script>
 </html>

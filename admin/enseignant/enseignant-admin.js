@@ -1,3 +1,19 @@
+/* NOTIFICATION */
+function afficherNotif(notif){
+    const notification = notif;
+    const icone = notif.firstElementChild;
+
+    notification.classList.add("apparait");
+    icone.classList.add("decale");
+
+    setTimeout(() => {
+        notification.classList.remove("apparait");
+        icone.classList.remove("decale");
+    }, 3000)
+}
+
+/* CRUD */
+
 /* VALIDATION (Contrainte) */
 function validation() {
     var nom = document.getElementById('nom').value;
@@ -11,7 +27,7 @@ function validation() {
         alert("Le champ compétence ou matière enseignée doit être rempli");
         return false;
     }
-    if(/^[^a-zA-Z]+$/.test(nom)){
+    if(!(/^[a-zA-Zàáèéüâê\s]+$/.test(nom))){
         alert("Le nom de l'enseignant ne peut contenir que des lettres");
         return false;
     }
@@ -116,6 +132,10 @@ function recupImgSrc(image, callback) {
             callback(imgSrc); // Appel du callback avec l'URL de l'image
         }
         reader.readAsDataURL(img);
+    } else{
+        // afficher le message d'échec s'il n'y a pas d'image
+        var echec = document.querySelector(".notif.echec");
+        afficherNotif(echec);
     }
 }
 
@@ -125,7 +145,6 @@ function ajouter() {
     if (validation()) {
         var nom = document.getElementById('nom').value;
         var comp = document.getElementById('comp').value;
-
         recupImgSrc(document.getElementById('img'), function(imgSrc) {
             var listEnseign = JSON.parse(localStorage.getItem("listeEnseign")) || [];
 
@@ -139,8 +158,19 @@ function ajouter() {
             affichage();
             document.getElementById('nom').value = "";
             document.getElementById('comp').value = "";
+            
+            // si tout est OK afficher la notif
+            var success = document.querySelector(".notif.reussite")
+            afficherNotif(success);
         });
+
+    } else {
+        // Afficher la notif d'échec s'il y a erreur
+
+        var echec = document.querySelector(".notif.echec");
+        afficherNotif(echec);
     }
+
 }
 
 /* Fonction de mise à jour */
