@@ -42,7 +42,7 @@
                     <!--<li><a href="../../mentions.html">Mentions</a></li>-->
                     <li class="active"><a class="active" href="">Enseignant</a></li>
                     <li><a href="../contact/contact-admin.php">Contact</a></li>
-                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
+                    <li><a href="../../backend/autorisation.php">Gestion Admin</a></li>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>

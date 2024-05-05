@@ -43,7 +43,7 @@
                     <!--<li><a href="../../mentions.html">Mentions</a></li>-->
                     <li><a href="../enseignant/enseignant-admin.php">Enseignant</a></li>
                     <li><a href="">Contact</a></li>
-                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
+                    <li><a href="../../backend/autorisation.php">Gestion Admin</a></li>
                 </ul>
             </nav>
             <i id="menu" class="fa-solid fa-bars"></i>
@@ -64,8 +64,8 @@
         <h2>École Ingénieuse, La Pépinière Des Élites Informaticiennes</h2>
         <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odit tenetur nostrum, ducimus magnam rem dolorum tempora excepturi laudantium error voluptatibus officia alias dignissimos quas iure hic ea ipsa in?</p>
         <div class="btn">
-            <a href="../../a propos.php" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
-            <a href="../../contact.php#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="../a propos/a propos-admin.php" class="boutons btn1" style="color: white; background: rgb(74, 74, 136);">Qui sommes-nous <i class="fa-solid fa-circle-info"></i></a>
+            <a href="../contact/contact-admin.php#map" class="boutons btn2" style="color: white; background: rgb(0 212 138)">Emplacement <i class="fa-solid fa-map-location-dot"></i></a>
         </div>
     </section>
     

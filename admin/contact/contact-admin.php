@@ -37,7 +37,7 @@
                     <!-- <li><a href="../mentions.html">Mentions</a></li> -->
                     <li><a href="../enseignant/enseignant-admin.php">Enseignant</a></li>
                     <li class="active"><a class="active" href="#">Contact</a></li>
-                    <li><a href="../gestion admin/gestionAdmin.php">Gestion Admin</a></li>
+                    <li><a href="../../backend/autorisation.php">Gestion Admin</a></li>
                     <?php
                         if (!isset($_SESSION['ID_user'])) {?>
                             <li><a href="./login/login.html">Login</a></li></ul></nav><i id="menu" class="fa-solid fa-bars"></i><?php
